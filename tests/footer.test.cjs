@@ -33,6 +33,11 @@ test('footer contém marca, contatos e crédito com links externos seguros', () 
   assert.equal((footer.match(/target="_blank"/g) || []).length, 3);
   assert.equal((footer.match(/rel="noopener noreferrer"/g) || []).length, 3);
   assert.match(footer, /data-current-year[^>]*datetime="2026">2026<\/time>/);
+  assert.match(footer, /data-social-icon="instagram"[^>]*aria-hidden="true"/);
+  assert.match(footer, /data-social-icon="whatsapp"[^>]*aria-hidden="true"/);
+  assert.match(footer, /site-footer__label[\s\S]*?data-social-icon="instagram"[\s\S]*?<span>Instagram<\/span>/);
+  assert.match(footer, /site-footer__label[\s\S]*?data-social-icon="whatsapp"[\s\S]*?<span>Atendimento<\/span>/);
+  assert.equal((footer.match(/class="site-footer__external-icon"/g) || []).length, 2);
 });
 
 test('footer possui responsividade, foco herdado e movimento reduzido', () => {
@@ -40,4 +45,6 @@ test('footer possui responsividade, foco herdado e movimento reduzido', () => {
   assert.match(styles, /@media \(prefers-reduced-motion: reduce\)/);
   assert.match(styles, /min-height: 52px/);
   assert.match(markup, /aria-label="Canais da Elemenctor"/);
+  assert.match(styles, /\.site-footer__contact:hover \.site-footer__external-icon/);
+  assert.doesNotMatch(styles, /\.site-footer__contact:hover svg/);
 });
