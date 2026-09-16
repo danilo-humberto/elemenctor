@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#101112" />
+    <meta
+      name="description"
+      content="Elemenctor. Performance e presença para quem veste a profissão. Camisas premium para personal trainers."
+    />
+    <title>Elemenctor | Vista sua profissão</title>
+    <link rel="icon" href="assets/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" href="assets/favicon.png" sizes="512x512" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" sizes="180x180" />
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"
+      defer
+    ></script>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="differentials.css" />
+    <script src="differentials.js" defer></script>
+    <link rel="stylesheet" href="products.css?v=2" />
+    <link rel="stylesheet" href="cart.css" />
+    <link rel="stylesheet" href="footer.css" />
+    <script src="cart.js?v=2" defer></script>
+    <script src="products.js?v=2" defer></script>
+    <script src="footer.js" defer></script>
+  </head>
+  <body>
+    <header class="header" aria-label="Cabeçalho">
+      <a class="brand" href="./" aria-label="Elemenctor, início"
+        ><img
+          src="assets/LOGO ELEMENCTOR SEM FUNDO.png"
+          alt="Elemenctor"
+          width="80"
+          height="70"
+      /></a>
+      <button
+        class="bag"
+        type="button"
+        aria-label="Sacola de compras"
+        aria-haspopup="dialog"
+        aria-controls="cart-drawer"
+        aria-expanded="false"
+      >
+        <span class="bag-icon" aria-hidden="true"></span>
+        <span class="bag-count" aria-hidden="true" hidden>0</span>
+      </button>
+    </header>
+    <main>
+      <section class="hero" aria-label="Elemenctor, performance e presença">
+        <div class="ambient" aria-hidden="true"></div>
+        <h1 class="title" aria-label="ELEMENCTOR">
+          <svg
+            class="title-arc"
+            viewBox="0 0 1200 500"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <defs>
+              <path id="brand-arc" d="M 100 290 Q 600 40 1100 290" />
+            </defs>
+            <text>
+              <textPath href="#brand-arc" startOffset="6%">E</textPath>
+            </text>
+            <text>
+              <textPath href="#brand-arc" startOffset="15.7778%">L</textPath>
+            </text>
+            <text>
+              <textPath href="#brand-arc" startOffset="25.5556%">E</textPath>
+            </text>
+            <text>
+              <textPath href="#brand-arc" startOffset="35.3333%">M</textPath>
+            </text>
+            <text>
+              <textPath href="#brand-arc" startOffset="45.1111%">E</textPath>
+            </text>
+            <text>
+              <textPath href="#brand-arc" startOffset="54.8889%">N</textPath>
+            </text>
+            <text>
+              <textPath href="#brand-arc" startOffset="64.6667%">C</textPath>
+            </text>
+            <text>
+              <textPath href="#brand-arc" startOffset="74.4444%">T</textPath>
+            </text>
+            <text>
+              <textPath href="#brand-arc" startOffset="84.2222%">O</textPath>
+            </text>
+            <text>
+              <textPath href="#brand-arc" startOffset="94%">R</textPath>
+            </text>
+          </svg>
+        </h1>
+        <div class="portrait">
+          <img
+            id="model"
+            src="assets/hero-man.png"
+            alt="Personal trainer de costas usando a camisa branca Elemenctor"
+            fetchpriority="high"
+            width="1024"
+            height="1436"
+          />
+        </div>
+        <div class="hero-bottom">
+          <p class="signature">
+            Performance no corpo.<br />Presença em cada detalhe.
+          </p>
+          <div class="action">
+            <button class="cta" type="button">
+              Conhecer produtos <span aria-hidden="true">↗</span>
+            </button>
+          </div>
+          <p class="category">
+            Desenvolvida para<br /><span>Personal trainers</span>
+          </p>
+        </div>
+      </section>
+      <section id="diferenciais" class="differentials" aria-labelledby="differentials-heading">
+        <div class="differentials__layout">
+          <div class="differentials__stage">
+            <header class="differentials__intro">
+              <p>FEITA PARA QUEM VIVE EM MOVIMENTO</p>
+              <h2 id="differentials-heading">O diferencial está nos detalhes.</h2>
+              <span>Não é apenas uma camisa. Cada escolha de construção reforça sua presença profissional durante o atendimento.</span>
+            </header>
+
+            <div class="differentials__media" aria-hidden="true">
+              <figure class="differentials__visual is-active" data-visual="0">
+                <img src="assets/ESTAMPA EMBORRACHADA.jpg.jpeg" alt="" loading="lazy" decoding="async" />
+              </figure>
+              <figure class="differentials__visual" data-visual="1">
+                <img src="assets/GOLA ENTERTELA.jpeg" alt="" loading="lazy" decoding="async" />
+              </figure>
+              <figure class="differentials__visual" data-visual="2">
+                <img src="assets/GOLA ACABAMENTO CRUZADO.jpeg" alt="" loading="lazy" decoding="async" />
+              </figure>
+              <figure class="differentials__visual" data-visual="3">
+                <img src="assets/PRODUTO DE QUALIDADE.png" alt="" loading="lazy" decoding="async" />
+              </figure>
+              <div class="differentials__shade"></div>
+              <div class="differentials__status">
+                <p><span class="differentials__current">01</span><span>/ 04</span></p>
+                <div class="differentials__progress"><span></span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="differentials__story">
+            <article class="differentials__step is-active" data-step="0" aria-current="step">
+              <img class="differentials__mobile-image" src="assets/ESTAMPA EMBORRACHADA.jpg.jpeg" alt="Detalhe da estampa emborrachada em relevo na camisa" loading="lazy" decoding="async" />
+              <div>
+                <span>01</span>
+                <h3>Presença que se sente</h3>
+                <p>A estampa frontal emborrachada com relevo 3D chama atenção sem excessos e foi desenvolvida para acompanhar uma rotina intensa.</p>
+              </div>
+            </article>
+            <article class="differentials__step" data-step="1">
+              <img class="differentials__mobile-image" src="assets/GOLA ENTERTELA.jpeg" alt="Detalhe da gola estruturada com entretela" loading="lazy" decoding="async" />
+              <div>
+                <span>02</span>
+                <h3>Estrutura que permanece</h3>
+                <p>A gola com entretela sustenta a forma da peça e preserva uma apresentação alinhada mesmo com o uso frequente.</p>
+              </div>
+            </article>
+            <article class="differentials__step" data-step="2">
+              <img class="differentials__mobile-image" src="assets/GOLA ACABAMENTO CRUZADO.jpeg" alt="Detalhe do acabamento cruzado da gola" loading="lazy" decoding="async" />
+              <div>
+                <span>03</span>
+                <h3>Acabamento pensado</h3>
+                <p>A construção cruzada reforça a gola e revela o cuidado aplicado onde qualidade e durabilidade realmente se encontram.</p>
+              </div>
+            </article>
+            <article class="differentials__step" data-step="3">
+              <img class="differentials__mobile-image" src="assets/PRODUTO DE QUALIDADE.png" alt="Detalhe que evidencia a qualidade do tecido e da construção da camisa" loading="lazy" decoding="async" />
+              <div>
+                <span>04</span>
+                <h3>Performance para a rotina</h3>
+                <p>Dry Fit leve e respirável, pensado para entregar conforto durante o atendimento e manter a aparência profissional por mais tempo.</p>
+                <ul aria-label="Benefícios do tecido">
+                  <li>Secagem rápida</li>
+                  <li>Alta respirabilidade</li>
+                  <li>Não deforma</li>
+                  <li>Não desbota</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section id="produtos" class="products" aria-labelledby="products-heading">
+        <div class="product-bg" aria-hidden="true"></div>
+        <div class="product-bg product-bg-next" aria-hidden="true"></div>
+        <div class="products-heading"><h2 id="products-heading">Nossos Produtos</h2><span class="product-count">01 / 02</span></div>
+        <div class="product-layout">
+          <div class="product-copy">
+            <p class="product-eyebrow">FEITA PARA SUA ROTINA</p>
+            <h3 id="product-name">Polo Personal <br>Black</h3>
+            <p id="product-description">Leveza para acompanhar seu ritmo. Polo Dry Fit respirável, de secagem rápida e acabamento premium para vestir sua profissão.</p>
+            <button class="add-cart" type="button">Adicionar ao carrinho <span aria-hidden="true">↗</span></button>
+            <p class="product-feedback" role="status" aria-live="polite"></p>
+          </div>
+          <div class="product-stage" aria-label="Imagem do produto selecionado">
+            <div class="product-spin"><img class="product-current" src="assets/polo-black-masculina.png" alt="Polo Personal Black masculina" width="1024" height="1536"><img class="product-incoming" alt="" aria-hidden="true" width="1024" height="1536" hidden></div>
+          </div>
+          <div class="product-options">
+            <p class="product-price">R$ 149,90</p>
+            <p class="price-note">Preço demonstrativo</p>
+            <div class="gender-options" role="group" aria-label="Modelagem">
+              <span>Escolha a modelagem</span>
+              <button type="button" data-gender="masculina" aria-pressed="true">Masculina</button>
+              <button type="button" data-gender="feminina" aria-pressed="false">Feminina</button>
+            </div>
+            <div class="size-options" role="group" aria-label="Tamanho" aria-describedby="size-error" aria-invalid="false">
+              <span class="size-options__heading">
+                <span>Escolha o tamanho</span>
+                <button class="size-guide-trigger" type="button" aria-haspopup="dialog" aria-controls="size-guide-dialog">Guia de tamanhos</button>
+              </span>
+              <button type="button" data-size="P" aria-pressed="false">P</button>
+              <button type="button" data-size="M" aria-pressed="false">M</button>
+              <button type="button" data-size="G" aria-pressed="false">G</button>
+              <button type="button" data-size="GG" aria-pressed="false">GG</button>
+              <span id="size-error" class="size-error" role="status" aria-live="polite"></span>
+            </div>
+            <p class="product-finish">Dry Fit · Acabamento premium</p>
+          </div>
+        </div>
+        <div class="product-navigation">
+          <button class="next-product" type="button" aria-label="Ver Polo Personal Chumbo">
+            <span><small>PRÓXIMO PRODUTO</small><strong>Polo Personal Chumbo</strong></span>
+            <img src="assets/polo-chumbo-masculina.png" alt="" width="80" height="120">
+          </button>
+          <div class="product-arrows"><button type="button" data-direction="-1" aria-label="Produto anterior">←</button><button type="button" data-direction="1" aria-label="Próximo produto">→</button></div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer" aria-label="Rodapé">
+      <div class="site-footer__inner">
+        <div class="site-footer__top">
+          <a class="site-footer__brand" href="./" aria-label="Elemenctor, voltar ao início">
+            <img
+              src="assets/LOGO ELEMENCTOR SEM FUNDO.png"
+              alt="Elemenctor"
+              width="96"
+              height="84"
+            />
+          </a>
+
+          <div class="site-footer__contacts" aria-label="Canais da Elemenctor">
+            <a
+              class="site-footer__contact"
+              href="https://www.instagram.com/elemenctor_/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Acessar o Instagram da Elemenctor em uma nova aba"
+            >
+              <span class="site-footer__label">Instagram</span>
+              <span class="site-footer__value">
+                @elemenctor_
+                <svg viewBox="0 0 20 20" aria-hidden="true">
+                  <path d="M6 14 14 6m-6 0h6v6" />
+                </svg>
+              </span>
+            </a>
+
+            <a
+              class="site-footer__contact"
+              href="https://wa.me/5581985745352"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Conversar com a Elemenctor pelo WhatsApp em uma nova aba"
+            >
+              <span class="site-footer__label">Atendimento</span>
+              <span class="site-footer__value">
+                (81) 98574-5352
+                <svg viewBox="0 0 20 20" aria-hidden="true">
+                  <path d="M6 14 14 6m-6 0h6v6" />
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <div class="site-footer__bottom">
+          <p>
+            © <time class="site-footer__year" data-current-year datetime="2026">2026</time>
+            Elemenctor. Todos os direitos reservados.
+          </p>
+          <p class="site-footer__credit">
+            Construído pela
+            <a
+              href="https://danilo-humberto.github.io/helio3tech/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Acessar o site da Helio3Tech em uma nova aba"
+            >Helio3Tech</a>.
+          </p>
+        </div>
+      </div>
+    </footer>
+    <div class="size-guide-layer" aria-hidden="true" hidden>
+      <div class="size-guide-overlay" aria-hidden="true"></div>
+      <section id="size-guide-dialog" class="size-guide-dialog" role="dialog" aria-modal="true" aria-labelledby="size-guide-title" tabindex="-1">
+        <header class="size-guide-dialog__header">
+          <div><p>MEDIDAS DA PEÇA</p><h2 id="size-guide-title">Guia de tamanhos</h2></div>
+          <button class="size-guide-close" type="button" aria-label="Fechar guia de tamanhos">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" aria-hidden="true"><path d="m6.5 6.5 11 11m0-11-11 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" /></svg>
+          </button>
+        </header>
+        <div class="size-guide-dialog__body">
+          <img src="assets/GUIA DE TAMANHOS UNIF.png" alt="Tabela com as medidas das camisas Elemenctor nos tamanhos P, M, G e GG" width="1200" height="1200" loading="lazy" decoding="async" />
+        </div>
+      </section>
+    </div>
+    <div class="cart-layer" aria-hidden="true" hidden>
+      <div class="cart-overlay" data-cart-close aria-hidden="true"></div>
+      <aside id="cart-drawer" class="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cart-title" tabindex="-1">
+        <header class="cart-drawer__header">
+          <div><p>SUA SELEÇÃO</p><h2 id="cart-title">Sua sacola</h2></div>
+          <button class="cart-close" type="button" aria-label="Fechar sacola">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" aria-hidden="true"><path d="m6.5 6.5 11 11m0-11-11 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" /></svg>
+          </button>
+        </header>
+        <div class="cart-drawer__body">
+          <div class="cart-empty">
+            <span class="cart-empty__icon" aria-hidden="true"><span></span></span>
+            <h3>Sua sacola está vazia</h3>
+            <p>Escolha a peça que combina com a sua rotina.</p>
+          </div>
+          <ul class="cart-items" aria-label="Itens da sacola"></ul>
+        </div>
+        <footer class="cart-drawer__footer" hidden>
+          <div class="cart-subtotal"><span>Subtotal</span><strong>R$ 0,00</strong></div>
+          <button class="cart-order" type="button" aria-haspopup="dialog" aria-controls="order-dialog">Realizar Pedido</button>
+        </footer>
+        <p class="cart-announcement sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
+      </aside>
+    </div>
+    <div class="order-layer" aria-hidden="true" hidden>
+      <div class="order-overlay" aria-hidden="true"></div>
+      <section id="order-dialog" class="order-dialog" role="dialog" aria-modal="true" aria-labelledby="order-title" tabindex="-1">
+        <header class="order-dialog__header">
+          <div>
+            <p>DADOS PARA ENTREGA</p>
+            <h2 id="order-title">Finalizar pedido</h2>
+          </div>
+          <button class="order-close" type="button" aria-label="Fechar formulário do pedido">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" aria-hidden="true"><path d="m6.5 6.5 11 11m0-11-11 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" /></svg>
+          </button>
+        </header>
+        <form class="order-form" novalidate>
+          <div class="order-form__grid">
+            <label class="order-field order-field--wide">
+              <span>Nome</span>
+              <input name="name" type="text" autocomplete="name" maxlength="100" required />
+            </label>
+            <label class="order-field">
+              <span>Telefone</span>
+              <input name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="15" pattern="\([0-9]{2}\) ([0-9]{4}|[0-9]{5})-[0-9]{4}" title="Informe um telefone com DDD, no formato (81) 98574-5352" required />
+              <small class="order-field__status-space" aria-hidden="true"></small>
+            </label>
+            <label class="order-field">
+              <span>CEP</span>
+              <input name="postalCode" type="text" inputmode="numeric" autocomplete="postal-code" maxlength="9" pattern="[0-9]{5}-[0-9]{3}" title="Informe um CEP com 8 números" aria-describedby="postal-status" required />
+              <small id="postal-status" class="postal-status" role="status" aria-live="polite" aria-atomic="true"></small>
+            </label>
+            <label class="order-field order-field--wide order-field--address">
+              <span>Endereço</span>
+              <input name="address" type="text" autocomplete="address-line1" maxlength="140" required />
+            </label>
+            <label class="order-field">
+              <span>Número</span>
+              <input name="number" type="text" maxlength="20" required />
+            </label>
+            <label class="order-field">
+              <span>Bairro</span>
+              <input name="district" type="text" autocomplete="address-level3" maxlength="80" required />
+            </label>
+            <label class="order-field">
+              <span>Cidade</span>
+              <input name="city" type="text" autocomplete="address-level2" maxlength="80" required />
+            </label>
+            <label class="order-field">
+              <span>Complemento <small>(opcional)</small></span>
+              <input name="complement" type="text" autocomplete="address-line2" maxlength="100" />
+            </label>
+          </div>
+          <p class="order-form__error" role="alert" aria-live="assertive"></p>
+          <button class="order-submit" type="submit">Finalizar Pedido</button>
+        </form>
+      </section>
+    </div>
+    <div class="cart-toast" role="status" aria-live="polite" aria-atomic="true" aria-hidden="true" hidden>
+      <span class="cart-toast__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+          <path d="m7 12.5 3.1 3L17.5 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </span>
+      <span class="cart-toast__content">
+        <strong>Produto adicionado</strong>
+        <span class="cart-toast__product"></span>
+      </span>
+      <button class="cart-toast__close" type="button" aria-label="Fechar notificação">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true">
+          <path d="m7 7 10 10M17 7 7 17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+        </svg>
+      </button>
+    </div>
+    <div class="intro" aria-label="Carregando Elemenctor" role="status">
+      <div class="loading-track"><span></span></div>
+    </div>
+    <div class="travel-logo" aria-hidden="true">
+      <img
+        src="assets/LOGO ELEMENCTOR SEM FUNDO.png"
+        alt=""
+        width="80"
+        height="70"
+      />
+    </div>
+    <button class="skip" type="button">Pular intro</button>
+    <noscript
+      ><style>
+        .intro,
+        .travel-logo,
+        .skip {
+          display: none;
+        }
+      </style></noscript
+    >
+  </body>
+</html>

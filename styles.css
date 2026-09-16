@@ -1,0 +1,362 @@
+:root {
+  color-scheme: dark;
+  --bg: #101112;
+  --text: #edeef0;
+  --muted: #999c9f;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+button {
+  font: inherit;
+}
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 7px;
+}
+button {
+  cursor: pointer;
+}
+.header {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 112px;
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.brand {
+  display: block;
+  width: 80px;
+  height: 70px;
+}
+.brand img,
+.travel-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: invert(1);
+}
+.bag {
+  position: absolute;
+  right: 4.3%;
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  background: none;
+  border: 0;
+  color: var(--text);
+}
+.bag-icon {
+  display: block;
+  width: 19px;
+  height: 21px;
+  border: 1.4px solid currentColor;
+  position: relative;
+}
+.bag-icon:before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: -7px;
+  width: 8px;
+  height: 9px;
+  border: 1.4px solid currentColor;
+  border-bottom: 0;
+  border-radius: 6px 6px 0 0;
+}
+.hero {
+  position: relative;
+  height: 100dvh;
+  min-height: 650px;
+  max-height: 1300px;
+  overflow: hidden;
+  isolation: isolate;
+}
+.ambient {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgb(8 11 14 / 22%) 0%,
+      rgb(8 11 14 / 10%) 46%,
+      rgb(8 11 14 / 68%) 100%
+    ),
+    radial-gradient(
+      ellipse at 50% 51%,
+      rgb(44 49 54 / 12%) 0%,
+      rgb(16 17 18 / 30%) 48%,
+      rgb(10 12 14 / 58%) 100%
+    ),
+    url("assets/hero-gym-background.png") center / cover no-repeat;
+  z-index: -1;
+}
+.title {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  font-size: clamp(54px, 12.5vw, 210px);
+  font-weight: 700;
+  letter-spacing: -0.075em;
+  line-height: 1.1;
+  white-space: nowrap;
+  width: 65%;
+  text-align: center;
+}
+.portrait {
+  position: absolute;
+  top: 28%;
+  bottom: 108px;
+  left: 49%;
+  transform: translateX(-50%);
+  width: min(49vw, 650px);
+  z-index: 2;
+  mask-image: linear-gradient(to bottom, black 83%, transparent 100%);
+}
+.portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center top;
+  display: block;
+}
+.hero-bottom {
+  position: absolute;
+  inset: auto 4.3% 34px;
+  z-index: 4;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: end;
+  gap: 24px;
+}
+.signature,
+.category {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.7;
+  letter-spacing: 0.025em;
+  color: var(--muted);
+}
+.category {
+  text-align: right;
+}
+.category span {
+  color: var(--text);
+}
+.action {
+  text-align: center;
+  position: relative;
+}
+.cta {
+  min-height: 52px;
+  padding: 0 25px;
+  border: 1px solid #666a6e;
+  background: var(--text);
+  color: var(--bg);
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 30px;
+  font-size: 13px;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  white-space: nowrap;
+}
+.cta:active {
+  transform: translateY(0) scale(0.97);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.cta span {
+  display: inline-block;
+  font-size: 21px;
+  transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.cta:active span {
+  transform: none;
+}
+@media (hover: hover) and (pointer: fine) {
+  .cta:hover {
+    background: #d9dde0;
+    border-color: #d9dde0;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+  }
+  .cta:hover span {
+    transform: translate(3px, -3px);
+  }
+  .cta:active {
+    transform: translateY(0) scale(0.97);
+  }
+  .cta:active span {
+    transform: none;
+  }
+}
+.intro {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  z-index: 10;
+  pointer-events: none;
+}
+.travel-logo {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: 100px;
+  height: 88px;
+  transform: translate(-50%, -50%);
+  z-index: 11;
+  pointer-events: none;
+}
+.loading-track {
+  position: absolute;
+  top: calc(50% + 70px);
+  left: 50%;
+  transform: translateX(-50%);
+  height: 1px;
+  width: 100px;
+  background: #333639;
+  overflow: hidden;
+}
+.loading-track span {
+  display: block;
+  height: 100%;
+  background: #dddfe1;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.skip {
+  position: fixed;
+  bottom: 26px;
+  right: 4.3%;
+  z-index: 12;
+  background: none;
+  border: 0;
+  color: var(--muted);
+  font-size: 11px;
+  padding: 12px;
+}
+.is-ready .intro,
+.is-ready .travel-logo,
+.is-ready .skip {
+  display: none;
+}
+.title .title-arc {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+.title-arc text {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 140px;
+  font-weight: 700;
+  letter-spacing: 0;
+  fill: currentColor;
+  text-anchor: middle;
+}
+@media (min-width: 1600px) {
+  .hero-bottom {
+    bottom: 50px;
+  }
+  .portrait {
+    bottom: 125px;
+  }
+}
+@media (max-width: 640px) {
+  .header {
+    height: 90px;
+  }
+  .brand {
+    width: 68px;
+    height: 60px;
+  }
+  .hero {
+    min-height: 600px;
+  }
+  .ambient {
+    background:
+      linear-gradient(
+        180deg,
+        rgb(8 11 14 / 24%) 0%,
+        rgb(8 11 14 / 8%) 46%,
+        rgb(8 11 14 / 70%) 100%
+      ),
+      radial-gradient(
+        ellipse at 50% 48%,
+        rgb(44 49 54 / 10%) 0%,
+        rgb(16 17 18 / 26%) 50%,
+        rgb(10 12 14 / 56%) 100%
+      ),
+      url("assets/hero-gym-background-mobile.png") center / cover no-repeat;
+  }
+  .title {
+    top: 22%;
+    font-size: 12.4vw;
+    width: 88%;
+    letter-spacing: -0.075em;
+  }
+  .portrait {
+    top: 27%;
+    width: 94vw;
+    bottom: 125px;
+  }
+  .hero-bottom {
+    bottom: 45px;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 18px;
+  }
+  .signature {
+    text-align: center;
+    font-size: 11px;
+  }
+  .category {
+    display: none;
+  }
+  .action {
+    grid-row: 1;
+  }
+  .cta {
+    min-height: 50px;
+  }
+  .bag {
+    right: 4%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *:before,
+  *:after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+  .intro,
+  .travel-logo,
+  .skip {
+    display: none;
+  }
+  .cta,
+  .cta span {
+    transform: none !important;
+  }
+}
