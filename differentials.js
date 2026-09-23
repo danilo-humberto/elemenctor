@@ -21,6 +21,7 @@
       else step.removeAttribute('aria-current');
     });
     current.textContent = String(next + 1).padStart(2, '0');
+    section.querySelector('.differentials__desktop-dots').hidden = next !== 0;
 
     const useGsap = animate && window.gsap && !reduced.matches && innerWidth > 900;
     if (useGsap) {
@@ -50,4 +51,34 @@
   steps.forEach(step => observer.observe(step));
   reduced.addEventListener('change', () => setActive(active, false));
   setActive(0, false);
+
+  section.querySelectorAll('[data-carousel]').forEach(carousel => {
+    const carouselImages = [...carousel.querySelectorAll('.differentials__carousel-image')];
+    const carouselDots = [...carousel.querySelectorAll('.differentials__carousel-dots button')];
+    let carouselIndex = 0;
+    let touchStartX = null;
+
+    function showCarouselImage(index) {
+      carouselIndex = index;
+      carouselImages.forEach((image, imageIndex) => {
+        const selected = imageIndex === index;
+        image.classList.toggle('is-active', selected);
+        image.setAttribute('aria-hidden', String(!selected));
+        carouselDots[imageIndex].classList.toggle('is-active', selected);
+        carouselDots[imageIndex].setAttribute('aria-pressed', String(selected));
+      });
+    }
+
+    carouselDots.forEach((dot, index) => dot.addEventListener('click', () => showCarouselImage(index)));
+    carousel.addEventListener('touchstart', event => {
+      touchStartX = event.touches[0].clientX;
+    }, {passive: true});
+    carousel.addEventListener('touchend', event => {
+      if (touchStartX === null) return;
+      const distance = event.changedTouches[0].clientX - touchStartX;
+      touchStartX = null;
+      if (Math.abs(distance) < 40) return;
+      showCarouselImage(Math.max(0, Math.min(carouselImages.length - 1, carouselIndex + (distance < 0 ? 1 : -1))));
+    }, {passive: true});
+  });
 })();

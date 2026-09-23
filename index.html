@@ -126,9 +126,10 @@
               <span>Não é apenas uma camisa. Cada escolha de construção reforça sua presença profissional durante o atendimento.</span>
             </header>
 
-            <div class="differentials__media" aria-hidden="true">
+            <div class="differentials__media" data-carousel>
               <figure class="differentials__visual is-active" data-visual="0">
-                <img src="assets/ESTAMPA EMBORRACHADA.jpg.jpeg" alt="" loading="lazy" decoding="async" />
+                <img class="differentials__carousel-image is-active" src="assets/ESTAMPA EMBORRACHADA.jpg.jpeg" alt="Detalhe da estampa emborrachada em relevo na camisa" loading="lazy" decoding="async" />
+                <img class="differentials__carousel-image" src="assets/estampa-emborrachada-close.jpg" alt="Close da estampa emborrachada na camisa preta" loading="lazy" decoding="async" aria-hidden="true" />
               </figure>
               <figure class="differentials__visual" data-visual="1">
                 <img src="assets/GOLA ENTERTELA.jpeg" alt="" loading="lazy" decoding="async" />
@@ -138,8 +139,13 @@
               </figure>
               <figure class="differentials__visual" data-visual="3">
                 <img src="assets/PRODUTO DE QUALIDADE.png" alt="" loading="lazy" decoding="async" />
+                <img src="assets/personal-trainer-polo-preta.jpg" alt="" loading="lazy" decoding="async" />
               </figure>
               <div class="differentials__shade"></div>
+              <div class="differentials__carousel-dots differentials__desktop-dots" role="group" aria-label="Selecionar foto da estampa">
+                <button type="button" class="is-active" aria-label="Mostrar foto 1 de 2 da estampa" aria-pressed="true"></button>
+                <button type="button" aria-label="Mostrar foto 2 de 2 da estampa" aria-pressed="false"></button>
+              </div>
               <div class="differentials__status">
                 <p><span class="differentials__current">01</span><span>/ 04</span></p>
                 <div class="differentials__progress"><span></span></div>
@@ -149,7 +155,14 @@
 
           <div class="differentials__story">
             <article class="differentials__step is-active" data-step="0" aria-current="step">
-              <img class="differentials__mobile-image" src="assets/ESTAMPA EMBORRACHADA.jpg.jpeg" alt="Detalhe da estampa emborrachada em relevo na camisa" loading="lazy" decoding="async" />
+              <div class="differentials__carousel" data-carousel aria-label="Fotos da estampa emborrachada" aria-roledescription="carrossel">
+                <img class="differentials__carousel-image is-active" src="assets/ESTAMPA EMBORRACHADA.jpg.jpeg" alt="Detalhe da estampa emborrachada em relevo na camisa" loading="lazy" decoding="async" />
+                <img class="differentials__carousel-image" src="assets/estampa-emborrachada-close.jpg" alt="Close da estampa emborrachada na camisa preta" loading="lazy" decoding="async" aria-hidden="true" />
+                <div class="differentials__carousel-dots" role="group" aria-label="Selecionar foto da estampa">
+                  <button type="button" class="is-active" aria-label="Mostrar foto 1 de 2 da estampa" aria-pressed="true"></button>
+                  <button type="button" aria-label="Mostrar foto 2 de 2 da estampa" aria-pressed="false"></button>
+                </div>
+              </div>
               <div>
                 <span>01</span>
                 <h3>Presença que se sente</h3>
@@ -173,7 +186,14 @@
               </div>
             </article>
             <article class="differentials__step" data-step="3">
-              <img class="differentials__mobile-image" src="assets/PRODUTO DE QUALIDADE.png" alt="Detalhe que evidencia a qualidade do tecido e da construção da camisa" loading="lazy" decoding="async" />
+              <div class="differentials__carousel" data-carousel aria-label="Fotos de detalhes da camisa" aria-roledescription="carrossel">
+                <img class="differentials__carousel-image is-active" src="assets/PRODUTO DE QUALIDADE.png" alt="Detalhe do tecido e acabamento da camisa" loading="lazy" decoding="async" />
+                <img class="differentials__carousel-image" src="assets/personal-trainer-polo-preta.jpg" alt="Personal trainer vestindo a polo preta" loading="lazy" decoding="async" aria-hidden="true" />
+                <div class="differentials__carousel-dots" role="group" aria-label="Selecionar foto">
+                  <button type="button" class="is-active" aria-label="Mostrar foto 1 de 2" aria-pressed="true"></button>
+                  <button type="button" aria-label="Mostrar foto 2 de 2" aria-pressed="false"></button>
+                </div>
+              </div>
               <div>
                 <span>04</span>
                 <h3>Performance para a rotina</h3>
