@@ -5,7 +5,7 @@
   const VALID_SIZES = new Set(['P', 'M', 'G', 'GG']);
   const VALID_IMAGE = /^assets\/polo-(black|chumbo)-(masculina|feminina)\.png$/;
   const currency = new Intl.NumberFormat('pt-BR', {style:'currency', currency:'BRL'});
-  const WHATSAPP_NUMBER = '5581985745352';
+  const WHATSAPP_NUMBER = '558199526615';
 
   function normalizeItem(value) {
     if (!value || typeof value !== 'object') return null;
