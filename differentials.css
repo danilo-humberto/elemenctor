@@ -85,13 +85,16 @@
   object-fit: cover;
 }
 .differentials__visual[data-visual="0"] img {
-  object-position: center 75%;
+  object-position: center 50%;
 }
 .differentials__visual[data-visual="0"] .differentials__carousel-image {
   position: absolute;
   inset: 0;
 }
 .differentials__visual[data-visual="0"] .differentials__carousel-image:last-child {
+  object-position: center 75%;
+}
+.differentials__visual[data-visual="0"] .differentials__carousel-image:first-child {
   object-position: center 48%;
 }
 .differentials__visual[data-visual="1"] img {
@@ -109,10 +112,10 @@
   object-fit: cover;
 }
 .differentials__visual[data-visual="3"] img:first-child {
-  object-position: center 55%;
+  object-position: center 48%;
 }
 .differentials__visual[data-visual="3"] img:last-child {
-  object-position: center 48%;
+  object-position: center 55%;
 }
 .differentials__shade {
   position: absolute;
@@ -328,13 +331,16 @@
     object-fit: cover;
     object-position: center;
   }
-  .differentials__carousel-image:last-of-type {
-    object-position: center 42%;
-  }
   .differentials__step:first-child .differentials__carousel-image:first-child {
-    object-position: center 58%;
+    object-position: center 50%;
   }
   .differentials__step:first-child .differentials__carousel-image:last-of-type {
+    object-position: center 75%;
+  }
+  .differentials__step:last-child .differentials__carousel-image:first-child {
+    object-position: center 42%;
+  }
+  .differentials__step:last-child .differentials__carousel-image:last-of-type {
     object-position: center 50%;
   }
   .differentials__step:nth-child(1) .differentials__mobile-image {
