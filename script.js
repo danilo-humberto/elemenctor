@@ -47,8 +47,10 @@
   }
   $('.skip').addEventListener('click', finish);
   reduce.addEventListener('change', e => { if (e.matches) finish(); });
-  $('.cta').addEventListener('click', () => {
-    $('#produtos').scrollIntoView({behavior: reduce.matches ? 'instant' : 'smooth'});
+  document.querySelectorAll('.cta, .header-buy').forEach(button => {
+    button.addEventListener('click', () => {
+      $('#produtos').scrollIntoView({behavior: reduce.matches ? 'instant' : 'smooth'});
+    });
   });
   if (reduce.matches || !window.gsap) { finish(); return; }
   gsap.set(reveal, {autoAlpha:0});

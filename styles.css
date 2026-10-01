@@ -50,7 +50,7 @@ button {
   position: absolute;
   top: calc(12px + env(safe-area-inset-top, 0px));
   left: 50%;
-  width: 152px;
+  width: 252px;
   height: 65px;
   border-radius: 20px;
   background: rgb(16 17 18 / 82%);
@@ -78,12 +78,12 @@ button {
 }
 .header.is-compact .brand {
   top: calc(44.5px + env(safe-area-inset-top, 0px));
-  left: calc(50% - 32px);
+  left: calc(50% - 82px);
   transform: translate(-50%, -50%) scale(0.7);
 }
 .header.is-compact .bag {
   top: calc(20.5px + env(safe-area-inset-top, 0px));
-  right: calc(50% - 60px);
+  right: calc(50% - 10px);
 }
 .brand img,
 .travel-logo img {
@@ -94,7 +94,7 @@ button {
 }
 .bag {
   position: absolute;
-  right: 4.3%;
+  right: calc(4.3% + 100px);
   top: 32px;
   pointer-events: auto;
   transition: right 520ms var(--header-ease), top 520ms var(--header-ease);
@@ -105,6 +105,35 @@ button {
   background: none;
   border: 0;
   color: var(--text);
+}
+.header-buy {
+  position: absolute;
+  top: 34px;
+  right: 4.3%;
+  width: 84px;
+  height: 44px;
+  padding: 0 12px;
+  border: 1px solid rgb(255 255 255 / 45%);
+  border-radius: 12px;
+  background: #eeefef;
+  color: #101112;
+  box-shadow: inset 0 2px 5px rgb(0 0 0 / 12%);
+  font-size: 13px;
+  font-weight: 600;
+  pointer-events: auto;
+  transition: right 520ms var(--header-ease), top 520ms var(--header-ease), background-color 180ms ease, box-shadow 180ms ease;
+}
+.header.is-compact .header-buy {
+  top: calc(22.5px + env(safe-area-inset-top, 0px));
+  right: calc(50% - 110px);
+}
+@media (hover: hover) and (pointer: fine) {
+  .header-buy:hover {
+    background: #fff;
+  }
+}
+.header-buy:active {
+  box-shadow: inset 0 3px 7px rgb(0 0 0 / 20%);
 }
 .bag-icon {
   display: block;
@@ -333,6 +362,7 @@ button {
     height: 90px;
   }
   .brand {
+    left: calc(4% + 34px);
     top: 45px;
     width: 68px;
     height: 60px;
@@ -391,6 +421,10 @@ button {
   }
   .bag {
     top: 21px;
+    right: calc(4% + 100px);
+  }
+  .header-buy {
+    top: 23px;
     right: 4%;
   }
 }
