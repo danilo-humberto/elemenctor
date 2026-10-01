@@ -20,6 +20,18 @@
   const toastClose=toast.querySelector('.cart-toast__close');
   const sizeOptions=$('.size-options'),sizeError=$('.size-error');
   const sizeGuideTrigger=$('.size-guide-trigger');
+  const productPriceRow=$('.product-price-row');
+  const sizeOptionsHeading=$('.size-options__heading');
+  const mobileOptions=matchMedia('(max-width: 540px)');
+  function positionSizeGuide(){
+    const target=mobileOptions.matches ? productPriceRow : sizeOptionsHeading;
+    if(sizeGuideTrigger.parentElement===target)return;
+    const hadFocus=document.activeElement===sizeGuideTrigger;
+    target.append(sizeGuideTrigger);
+    if(hadFocus)sizeGuideTrigger.focus({preventScroll:true});
+  }
+  mobileOptions.addEventListener('change',positionSizeGuide);
+  positionSizeGuide();
   const sizeGuideLayer=document.querySelector('.size-guide-layer');
   const sizeGuideDialog=document.querySelector('.size-guide-dialog');
   const sizeGuideOverlay=document.querySelector('.size-guide-overlay');

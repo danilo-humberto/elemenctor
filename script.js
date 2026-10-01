@@ -72,11 +72,12 @@
     const arc = {progress:0};
     const gap = innerWidth <= 640 ? 16 : 24;
     const lastRight = letters.at(-1).getBoundingClientRect().right;
+    const flightScale = innerWidth <= 640 ? .7 : 1;
     // Reserve the full pulse width, including on narrow screens.
-    const flightScale = Math.min(1, Math.max(.1, (innerWidth - 8 - lastRight - gap) / (100 * 1.12)));
+    const exitScale = Math.min(flightScale, Math.max(.1, (innerWidth - 8 - lastRight - gap) / (100 * 1.12)));
     const end = arcPosition(1);
     const nearEnd = arcPosition(.99);
-    const exitX = Math.max(end.x, lastRight + gap + 50 * flightScale * 1.12 - innerWidth / 2);
+    const exitX = Math.max(end.x, lastRight + gap + 50 * exitScale * 1.12 - innerWidth / 2);
     const exitY = end.y + (exitX - end.x) * (end.y - nearEnd.y) / (end.x - nearEnd.x);
     timeline = gsap.timeline({onComplete:finish});
     timeline.to('.loading-track span',{scaleX:1,duration:.25})
@@ -92,8 +93,8 @@
           letter.style.opacity = opacity;
         });
       }},'brand+=.6')
-      .to('.travel-logo',{x:exitX,y:exitY,duration:.3,ease:'power2.out'},'brand+=2.6')
-      .to('.travel-logo',{scale:flightScale * 1.12,duration:.25,ease:'sine.inOut'},'brand+=2.9')
+      .to('.travel-logo',{x:exitX,y:exitY,scale:exitScale,duration:.3,ease:'power2.out'},'brand+=2.6')
+      .to('.travel-logo',{scale:exitScale * 1.12,duration:.25,ease:'sine.inOut'},'brand+=2.9')
       .to('.travel-logo',{scale:0,autoAlpha:0,duration:.4,ease:'power2.in'},'brand+=3.15')
       .fromTo('.portrait',{autoAlpha:0,y:220},{autoAlpha:1,y:0,duration:1.6,ease:'power3.out'},'brand+=2.6')
       .fromTo('.hero-bottom',{autoAlpha:0,y:20},{autoAlpha:1,y:0,duration:.75,ease:'power2.out'},'brand+=3.7')

@@ -34,7 +34,7 @@
 .differentials__intro > p {
   margin: 0 0 16px;
   color: var(--diff-muted);
-  font-size: 10px;
+  font-size: 0.75rem;
   letter-spacing: 0.18em;
 }
 .differentials__intro h2 {
@@ -50,7 +50,7 @@
   max-width: 54ch;
   margin-top: 22px;
   color: var(--diff-muted);
-  font-size: 13px;
+  font-size: 0.9375rem;
   line-height: 1.7;
 }
 .differentials__media {
@@ -139,13 +139,13 @@
   gap: 6px;
   align-items: baseline;
   margin: 0;
-  font-size: 11px;
+  font-size: 0.8125rem;
   font-variant-numeric: tabular-nums;
   color: rgba(255, 255, 255, 0.58);
 }
 .differentials__current {
   color: #fff;
-  font-size: 18px;
+  font-size: 1.25rem;
 }
 .differentials__progress {
   width: min(18vw, 210px);
@@ -182,7 +182,7 @@
 }
 .differentials__step > div > span {
   color: var(--diff-muted);
-  font-size: 11px;
+  font-size: 0.8125rem;
   letter-spacing: 0.14em;
 }
 .differentials__step h3 {
@@ -197,7 +197,7 @@
   max-width: 38ch;
   margin: 0;
   color: #b7bdc3;
-  font-size: 14px;
+  font-size: 1rem;
   line-height: 1.75;
 }
 .differentials__step ul {
@@ -213,7 +213,7 @@
   position: relative;
   padding-left: 14px;
   color: #e4e6e8;
-  font-size: 11px;
+  font-size: 0.8125rem;
   line-height: 1.5;
 }
 .differentials__step li::before {

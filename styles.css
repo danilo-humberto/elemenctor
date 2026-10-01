@@ -21,6 +21,7 @@
 }
 body {
   margin: 0;
+  font-size: 1.125rem;
 }
 button,
 a {
@@ -118,7 +119,7 @@ button {
   background: #eeefef;
   color: #101112;
   box-shadow: inset 0 2px 5px rgb(0 0 0 / 12%);
-  font-size: 13px;
+  font-size: 0.9375rem;
   font-weight: 600;
   pointer-events: auto;
   transition: right 520ms var(--header-ease), top 520ms var(--header-ease), background-color 180ms ease, box-shadow 180ms ease;
@@ -223,7 +224,7 @@ button {
 .signature,
 .category {
   margin: 0;
-  font-size: 12px;
+  font-size: 0.875rem;
   line-height: 1.7;
   letter-spacing: 0.025em;
   color: var(--muted);
@@ -248,7 +249,7 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 30px;
-  font-size: 13px;
+  font-size: 0.9375rem;
   transition:
     background-color 0.2s ease,
     border-color 0.2s ease,
@@ -327,7 +328,7 @@ button {
   background: none;
   border: 0;
   color: var(--muted);
-  font-size: 11px;
+  font-size: 0.8125rem;
   padding: 12px;
 }
 .is-ready .intro,
@@ -389,13 +390,16 @@ button {
   .title {
     top: 22%;
     font-size: 12.4vw;
-    width: 88%;
+    width: 98%;
     letter-spacing: -0.075em;
   }
+  .title-arc text {
+    font-size: 128px;
+  }
   .portrait {
-    top: 27%;
-    width: 94vw;
-    bottom: 125px;
+    top: 29%;
+    width: 86vw;
+    bottom: 145px;
   }
   .hero-bottom {
     bottom: 45px;
@@ -405,7 +409,7 @@ button {
   }
   .signature {
     text-align: center;
-    font-size: 11px;
+    font-size: 0.8125rem;
   }
   .category {
     display: none;

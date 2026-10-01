@@ -11,7 +11,7 @@
   background: #f3f5f6;
   border: 2px solid #111519;
   border-radius: 999px;
-  font-size: 10px;
+  font-size: 0.75rem;
   font-weight: 700;
   line-height: 1;
   font-variant-numeric: tabular-nums;
@@ -70,7 +70,7 @@ body.cart-open {
 .cart-drawer__header p {
   margin: 0 0 9px;
   color: #8f979e;
-  font-size: 9px;
+  font-size: 0.6875rem;
   letter-spacing: 0.18em;
 }
 .cart-drawer__header h2 {
@@ -134,7 +134,7 @@ body.cart-open {
   max-width: 28ch;
   margin: 0;
   color: #9ba2a9;
-  font-size: 13px;
+  font-size: 0.9375rem;
   line-height: 1.6;
 }
 .cart-items {
@@ -178,12 +178,12 @@ body.cart-open {
 .cart-item__variant {
   margin: 0;
   color: #9ba2a9;
-  font-size: 11px;
+  font-size: 0.8125rem;
   text-transform: capitalize;
 }
 .cart-item__price {
   margin: 9px 0 12px;
-  font-size: 13px;
+  font-size: 0.9375rem;
   font-variant-numeric: tabular-nums;
 }
 .cart-item__actions {
@@ -217,7 +217,7 @@ body.cart-open {
 }
 .cart-quantity span {
   text-align: center;
-  font-size: 12px;
+  font-size: 0.875rem;
   font-variant-numeric: tabular-nums;
 }
 .cart-remove {
@@ -227,7 +227,7 @@ body.cart-open {
   color: #9ba2a9;
   background: none;
   border: 0;
-  font-size: 11px;
+  font-size: 0.8125rem;
   text-decoration: underline;
   text-underline-offset: 4px;
 }
@@ -245,12 +245,12 @@ body.cart-open {
 }
 .cart-subtotal span {
   color: #b8bec4;
-  font-size: 12px;
+  font-size: 0.875rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
 .cart-subtotal strong {
-  font-size: 24px;
+  font-size: 1.625rem;
   font-weight: 500;
   letter-spacing: -0.035em;
   font-variant-numeric: tabular-nums;
@@ -263,7 +263,7 @@ body.cart-open {
   background: #eef1f3;
   border: 1px solid #eef1f3;
   border-radius: 10px;
-  font-size: 12px;
+  font-size: 0.875rem;
   font-weight: 600;
   transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -338,7 +338,7 @@ body.cart-open {
 .order-dialog__header p {
   margin: 0 0 7px;
   color: #9199a0;
-  font-size: 9px;
+  font-size: 0.6875rem;
   font-weight: 700;
   letter-spacing: 0.16em;
 }
@@ -384,16 +384,16 @@ body.cart-open {
 }
 .order-field > span {
   color: #c8cdd1;
-  font-size: 11px;
+  font-size: 0.8125rem;
 }
 .order-field small {
   color: #7f878e;
-  font-size: 9px;
+  font-size: 0.6875rem;
 }
 .order-field .postal-status {
   min-height: 14px;
   color: #8d969d;
-  font-size: 10px;
+  font-size: 0.75rem;
   line-height: 1.4;
 }
 .order-field .order-field__status-space {
@@ -435,7 +435,7 @@ body.cart-open {
   min-height: 18px;
   margin: 14px 0 8px;
   color: #e6a0a0;
-  font-size: 11px;
+  font-size: 0.8125rem;
 }
 .order-submit {
   width: 100%;
@@ -444,7 +444,7 @@ body.cart-open {
   background: #eef1f3;
   border: 1px solid #eef1f3;
   border-radius: 10px;
-  font-size: 12px;
+  font-size: 0.875rem;
   transition: transform 200ms ease, background-color 200ms ease, box-shadow 200ms ease;
 }
 .order-dialog button:focus-visible,
