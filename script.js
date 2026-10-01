@@ -1,4 +1,18 @@
 (() => {
+  const header = document.querySelector('.header');
+  let compact;
+  function updateHeader() {
+    const next = window.scrollY > 32;
+    if (next === compact) return;
+    compact = next;
+    header.classList.toggle('is-compact', compact);
+  }
+  window.addEventListener('scroll', updateHeader, {passive:true});
+  window.addEventListener('pageshow', updateHeader);
+  updateHeader();
+})();
+
+(() => {
   const $ = (s) => document.querySelector(s);
   const reduce = matchMedia('(prefers-reduced-motion: reduce)');
   let timeline, pulse, finished = false;
@@ -10,7 +24,7 @@
   const metrics = document.createElement('canvas').getContext('2d');
   const letterStyle = getComputedStyle(letters[0]);
   metrics.font = `${letterStyle.fontWeight} ${letterStyle.fontSize} ${letterStyle.fontFamily}`;
-  const halfCapHeight = metrics.measureText('H').actualBoundingBoxAscent / 2;
+  let halfCapHeight = metrics.measureText('H').actualBoundingBoxAscent / 2;
   // SVG and the fixed logo share screen coordinates, including responsive scaling.
   function arcPosition(progress) {
     const point = path.getPointAtLength(pathLength * progress);
@@ -41,7 +55,12 @@
   gsap.set(letters, {opacity:0});
   pulse = gsap.to('.travel-logo img', {opacity:.4,scale:.95,duration:.9,repeat:-1,yoyo:true,ease:'sine.inOut'});
   const images = [...document.querySelectorAll('.hero img, .header img, .travel-logo img')];
-  const loaded = Promise.allSettled(images.map(img => img.decode()));
+  const loaded = Promise.allSettled([
+    ...images.map(img => img.decode()),
+    document.fonts.load(metrics.font, 'ELEMENCTOR').then(() => {
+      halfCapHeight = metrics.measureText('H').actualBoundingBoxAscent / 2;
+    }),
+  ]);
   const timeout = new Promise(resolve => setTimeout(resolve, 7000));
   gsap.to('.loading-track span',{scaleX:.8,duration:1.3,ease:'power2.out'});
   Promise.all([Promise.race([loaded, timeout]),new Promise(resolve => setTimeout(resolve,1400))]).then(() => {
@@ -78,6 +97,6 @@
       .fromTo('.hero-bottom',{autoAlpha:0,y:20},{autoAlpha:1,y:0,duration:.75,ease:'power2.out'},'brand+=3.7')
       .fromTo('.header',{autoAlpha:0,y:-20},{autoAlpha:1,y:0,duration:.75,ease:'power2.out'},'brand+=3.7');
   });
-  // SVG rescales the shared arc automatically; cancel any in-flight screen coordinates.
-  window.addEventListener('resize', () => { if (!finished) finish(); });
+  // arcPosition reads the current SVG matrix on every frame, so resizing
+  // must not cancel the intro or skip the hero reveal.
 })();

@@ -4,6 +4,7 @@ const path = require("node:path");
 const types = {
   ".html": "text/html; charset=utf-8",
   ".css": "text/css",
+  ".woff2": "font/woff2",
   ".js": "text/javascript",
   ".png": "image/png",
   ".jpeg": "image/jpeg",

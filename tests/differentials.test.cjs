@@ -53,7 +53,7 @@ test('movimento reduzido mantém troca imediata e estado consistente',()=>{
 });
 
 test('marcação preserva ordem, lazy loading e CTA original para produtos',()=>{
-  const section=markup.match(/<section id="diferenciais" class="differentials"[\s\S]*?<section id="produtos"/)?.[0]||'';
+  const section=markup.match(/<section id="diferenciais" class="differentials"[\s\S]*?<\/main>/)?.[0]||'';
   const expected=['ESTAMPA EMBORRACHADA.jpg.jpeg','GOLA ENTERTELA.jpeg','GOLA ACABAMENTO CRUZADO.jpeg','PRODUTO DE QUALIDADE.png'];
   let cursor=-1;
   expected.forEach(name=>{const next=section.indexOf(name,cursor+1);assert.ok(next>cursor);cursor=next;});

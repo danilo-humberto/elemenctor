@@ -1,5 +1,14 @@
+@font-face {
+  font-family: "Goldman";
+  src: url("assets/fonts/goldman-bold-latin.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
 :root {
   color-scheme: dark;
+  scroll-padding-top: calc(96px + env(safe-area-inset-top, 0px));
   --bg: #101112;
   --text: #edeef0;
   --muted: #999c9f;
@@ -29,18 +38,52 @@ button {
   cursor: pointer;
 }
 .header {
-  position: absolute;
+  position: fixed;
   inset: 0 0 auto;
   height: 112px;
   z-index: 6;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  pointer-events: none;
+  --header-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+.header::before {
+  content: "";
+  position: absolute;
+  top: calc(12px + env(safe-area-inset-top, 0px));
+  left: 50%;
+  width: 152px;
+  height: 65px;
+  border-radius: 20px;
+  background: rgb(16 17 18 / 82%);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 6px 24px rgb(0 0 0 / 20%);
+  opacity: 0;
+  transform: translateX(-50%) scale(0.9);
+  transition: opacity 400ms ease, transform 520ms var(--header-ease);
+}
+.header.is-compact::before {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
 }
 .brand {
+  position: absolute;
+  top: 56px;
+  left: 50%;
   display: block;
   width: 80px;
   height: 70px;
+  transform: translate(-50%, -50%);
+  pointer-events: auto;
+  transition: left 520ms var(--header-ease), top 520ms var(--header-ease), transform 520ms var(--header-ease);
+}
+.header.is-compact .brand {
+  top: calc(44.5px + env(safe-area-inset-top, 0px));
+  left: calc(50% - 32px);
+  transform: translate(-50%, -50%) scale(0.7);
+}
+.header.is-compact .bag {
+  top: calc(20.5px + env(safe-area-inset-top, 0px));
+  right: calc(50% - 60px);
 }
 .brand img,
 .travel-logo img {
@@ -52,6 +95,9 @@ button {
 .bag {
   position: absolute;
   right: 4.3%;
+  top: 32px;
+  pointer-events: auto;
+  transition: right 520ms var(--header-ease), top 520ms var(--header-ease);
   width: 48px;
   height: 48px;
   display: grid;
@@ -267,8 +313,8 @@ button {
   overflow: visible;
 }
 .title-arc text {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 140px;
+  font-family: "Goldman", Arial, Helvetica, sans-serif;
+  font-size: 120px;
   font-weight: 700;
   letter-spacing: 0;
   fill: currentColor;
@@ -287,6 +333,7 @@ button {
     height: 90px;
   }
   .brand {
+    top: 45px;
     width: 68px;
     height: 60px;
   }
@@ -339,7 +386,11 @@ button {
   .cta {
     min-height: 50px;
   }
+  .header.is-compact .brand {
+    transform: translate(-50%, -50%) scale(0.8235294118);
+  }
   .bag {
+    top: 21px;
     right: 4%;
   }
 }
