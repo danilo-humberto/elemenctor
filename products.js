@@ -32,6 +32,18 @@
   }
   mobileOptions.addEventListener('change',positionSizeGuide);
   positionSizeGuide();
+  const productNavigation=$('.product-navigation');
+  const productLayout=$('.product-layout');
+  function positionProductNavigation(){
+    const target=mobileOptions.matches ? productLayout : section;
+    if(productNavigation.parentElement===target)return;
+    const focused=document.activeElement;
+    const hadFocus=productNavigation.contains(focused);
+    target.insertBefore(productNavigation,mobileOptions.matches ? options : null);
+    if(hadFocus)focused.focus({preventScroll:true});
+  }
+  mobileOptions.addEventListener('change',positionProductNavigation);
+  positionProductNavigation();
   const sizeGuideLayer=document.querySelector('.size-guide-layer');
   const sizeGuideDialog=document.querySelector('.size-guide-dialog');
   const sizeGuideOverlay=document.querySelector('.size-guide-overlay');
